@@ -78,6 +78,9 @@ def main(train_list, args):
         lr_scheduler.step()
 
     # ========================================================= save final model
+    if not os.path.exists(args.pth_path):
+        os.makedirs(args.pth_path)
+
     save_path = os.path.join(args.pth_path, args.model_name+'_'+str(args.seed)+'.pth')
     torch.save(model.state_dict(), save_path)
     print('model saved to:', save_path)
@@ -140,15 +143,12 @@ def train_epoch(model, train_loader, optimizer, cen_criterion, contrastive_loss,
 def fine_tune_epoch(model, data_loader, optimizer, cen_criterion, current_lr, scaler, log=False):
     loss_total = AvgrageMeter()
     model.train()
-    #dataset.shuffle()
-    #data_loader = DataLoader(dataset, batch_size=batch_size, pin_memory=True, drop_last=True, shuffle=True)
     
     result_list = []
     gt_list = []  
 
     torch.cuda.empty_cache()
     for i, data in enumerate(tqdm(data_loader)):
-    #for i, data in enumerate(data_loader):
         optimizer.zero_grad()
         
         img_bona, img_bona_aug, label_bona = data['img_bona'].cuda(), data['img_bona_aug'].cuda(), data['label_bona'].cuda()
