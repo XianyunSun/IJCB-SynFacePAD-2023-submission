@@ -47,6 +47,8 @@ def main(test_list, model_list, args):
     else:
         pred_df = ensembel(pred_list)
     
+    if not os.path.exists(args.output_file):
+        os.makedirs(args.output_file)
     pred_df.to_csv(os.path.join(args.output_file, 'pred_results_vote.csv'), index=False)
 
 # =============================================================================================================
