@@ -40,7 +40,7 @@ CUDA_VISIBLE_DEVICES=0 python test.py --test_data_dir=testset_root_dir --test_cs
 ```
 Where the joint of `testset_root_dir` and `image_path` in `testset_csv` should form a complete path to the test image.
 
-Weights are loaded from `./pth` by defult, you may change this by setting `--model_path=your_mndel_dir`. Notice that this code will test all the models saved in the directory and output an averaged prediction score.
+Weights are loaded from `./pth` by defult, you may change this by setting `--model_path=your_mndel_dir`. Notice that this code will test all the models saved in the directory and output an averaged prediction score. Our pretrained weights can be found [here](https://drive.google.com/file/d/13GqcEk2Jp2N7nBYhlheTAtUJAXzzKmeO/view?usp=share_link).
 
 Results will be saved to `./result` by defult, you may change this by `--output_file=your_result_dir`.
 
