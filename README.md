@@ -2,7 +2,7 @@
 The structure of our code is mainly developped based on the work [SynthASpoof](https://github.com/meilfang/SynthASpoof)[<sup>1</sup>](#refer-anchor-1).
 
 ## Environment setup
-Some critial packages in our environment:
+Some critical packages in our environment:
 ```
 python==3.9.16
 albumentations==1.3.0
