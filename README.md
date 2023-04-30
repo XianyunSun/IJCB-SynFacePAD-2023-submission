@@ -44,7 +44,7 @@ Weights are loaded from `./pth` by defult, you may change this by setting `--mod
 
 Results will be saved to `./result` by defult, you may change this by `--output_file=your_result_dir`.
 
-The results will be saved in a `.csv` file, containing the following columns:`img_path`, `true_label`, `prediction_score`, `prediction_label`. The threshold when predicting lables is chosen to achieve the highest AUC(Area Under the Curve) value under given ground truth.
+The results will be saved in a `.csv` file, containing the following columns:`img_path`, `true_label`, `prediction_score`, `prediction_label`. The threshold when predicting lables is chosen to achieve the highest AUC (Area Under the Curve) value under given ground truth.
 
 ## Reference
 
