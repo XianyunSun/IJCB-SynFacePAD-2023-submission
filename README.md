@@ -43,7 +43,7 @@ You will need to modify the settings in both `.sh` files according to you enviro
     --log name for wandb logging, set to None to disable wandb logging
 ```
 
-The joint of `train_dir` and `image_path` in `train_csv` should form a complete path to the training images, and same for the test images.
+The joint of `train_dir` and `image_path` in `train_csv` should form a complete path to the training images, and same goes for the test images.
 
 The trained weights will be saved to `./pth` by defult, you may change this directory using `--pth_path=you_saving_dir`
 
