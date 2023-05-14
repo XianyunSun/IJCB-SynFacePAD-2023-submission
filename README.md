@@ -28,14 +28,22 @@ python get_id.py
 ```
 
 ## Training
-To reproduce our method, run:
+Our method is a fusion of two models. Run the following two lines to train each model seperately:
 ```
-CUDA_VISIBLE_DEVICES=0,1 python train.py --train_dir=dataset_root_dir --train_csv=dataset_csv --fine_tune_epoch=29 --log=train
+sh train_pad.sh
+sh train_id.sh
+```
+You will need to modify the settings in both `.sh` files according to you environment:
+
+```
+    --train_dir the root dir of training set
+    --train_csv the csv file generated during pre-processing
+    --test_dir the root dir of test set, set to None to disable testing
+    --test_csv the coresponding test csv file of the test set
+    --log name for wandb logging, set to None to disable wandb logging
 ```
 
-Where `dataset_csv` is the csv file generated during pre-processing. The joint of `dataset_root_dir` and `image_path` in `dataset_csv` should form a complete path to the training image.
-
-Seting `--log` to any non-empty string will enable wandb logging. Set this to `None` to disable.
+The joint of `train_dir` and `image_path` in `train_csv` should form a complete path to the training images, and same for the test images.
 
 The trained weights will be saved to `./pth` by defult, you may change this directory using `--pth_path=you_saving_dir`
 
