@@ -15,17 +15,27 @@ wandb==0.14.0
 ```
 
 ## Data pre-prossing
+
+All the pre-prossing codes can be found in the `./data_preprocess` folder. You will need to change the path according to your environment.
+
 For cropping facial regions, we applied the pre-prossing code provided by the organizers. The file structures are kept the same after the pre-processing.
+
+We detected and saved a bonding box of the eye region using MTCNNN for each image, which is used for the eye cutout augmentation during training. 
+```
+python eye_crop.py
+```
 
 We also add jpg compression to the images after cropping. We saved 2 compressed versions of every image, keeping 50% and 25% of the original quality, respectively. Run the following line to compress the images. Notices that you will need to change the path in the code to cover every image.
 ```
 python compress.py
 ```
 
-We also use the number of each image as the corresponding id number. Run the following line to add this id information to the csv file. You will need to change the path. 
+We also use the number of each image as the corresponding id number. Run the following line to add this id information to the csv file. 
 ```
 python get_id.py
 ```
+
+
 
 ## Training
 Our method is a fusion of two models. Run the following two lines to train each model seperately:
