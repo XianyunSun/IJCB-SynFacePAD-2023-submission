@@ -20,7 +20,7 @@ All the pre-prossing codes can be found in the `./data_preprocess` folder. You w
 
 For cropping facial regions, we applied the pre-prossing code provided by the organizers. The file structures are kept the same after the pre-processing.
 
-We detected and saved a bonding box of the eye region using MTCNN for each image, which is used for the eye cutout augmentation during training. 
+We detected and saved a bonding box of the eye region using MTCNN for each image, which is used for the eye cutout augmentation[<sup>2</sup>](#refer-anchor-2) during training. 
 ```
 python eye_crop.py
 ```
@@ -78,3 +78,6 @@ The results will be saved in a `.csv` file, containing the following columns:`im
 
 <div id="refer-anchor-1"></div>
 -[1] Meiling Fang, Marco Huber, and Naser Damer: SynthASpoof: Developing Face Presentation Attack Detection Based on Privacy-friendly Synthetic Data. 2023.
+
+<div id="refer-anchor-2"></div>
+-[2]Das, Sowmen, et al. "Towards solving the deepfake problem: An analysis on improving deepfake detection using dynamic face augmentation." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2021.
