@@ -20,7 +20,7 @@ All the pre-prossing codes can be found in the `./data_preprocess` folder. You w
 
 For cropping facial regions, we applied the pre-prossing code provided by the organizers. The file structures are kept the same after the pre-processing.
 
-We detected and saved a bonding box of the eye region using MTCNNN for each image, which is used for the eye cutout augmentation during training. 
+We detected and saved a bonding box of the eye region using MTCNN for each image, which is used for the eye cutout augmentation during training. 
 ```
 python eye_crop.py
 ```
